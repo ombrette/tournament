@@ -1,0 +1,12 @@
+{
+  "name": "tournament",
+  "app_id": "3106feed",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
