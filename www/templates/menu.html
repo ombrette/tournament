@@ -18,13 +18,16 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
+        <ion-item menu-close href="#" ui-sref="app.home">
+          Accueil
+        </ion-item>
         <ion-item menu-close ng-click="login()">
           Login
         </ion-item>
-        <ion-item menu-close href="#/app/search">
+        <ion-item menu-close href="#" ui-sref="app.tournaments">
           Tournois
         </ion-item>
-        <ion-item menu-close href="#" ui-sref="app.browse">
+        <ion-item menu-close href="#" ui-sref="app.profile">
           MonProfil
         </ion-item>
       </ion-list>
