@@ -36,7 +36,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/home',
     views: {
       'menuContent': {
-        templateUrl: 'templates/home.html'
+        templateUrl: 'templates/home.html',
+        controller: 'HomeCtrl'
       }
     }
   })
@@ -86,15 +87,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('app.tournaments', {
-      url: '/tournaments',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/tournaments.html',
-          controller: 'TournamentsCtrl'
-        }
-      }
-    })
+    // .state('app.tournaments', {
+    //   url: '/tournaments',
+    //   views: {
+    //     'menuContent': {
+    //       templateUrl: 'templates/tournaments.html',
+    //       controller: 'TournamentsCtrl'
+    //     }
+    //   }
+    // })
 
   .state('app.singleTournament', {
     url: '/tournaments/:tournamentId',

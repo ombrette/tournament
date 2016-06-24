@@ -55,8 +55,25 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('TournamentsCtrl', function($scope) {
+.controller('HomeCtrl', function($scope) {
+  $scope.tournaments = [
+    { title: 'Reggae', id: 1 },
+    { title: 'Chill', id: 2 },
+    { title: 'Dubstep', id: 3 },
+    { title: 'Indie', id: 4 },
+    { title: 'Rap', id: 5 },
+    { title: 'Cowbell', id: 6 }
+  ];
 })
 
 .controller('TournamentCtrl', function($scope, $stateParams) {
+  $scope.tournament = { name: 'Cowbell', id: 6, game: 'Hearthstone', begin_date: '10/08/2016', status: 'Ouvert', desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo, nibh ac feugiat sagittis, metus diam tristique nibh, ac vehicula arcu mi vitae odio. Sed malesuada gravida augue, sed lobortis ligula scelerisque non." };
+
+  $scope.players = [
+    { pseudo: 'john45Doe' },
+    { pseudo: 'test25' },
+    { pseudo: 'oklm789' },
+    { pseudo: '777GG' },
+    { pseudo: 'mine777' },
+  ];
 });
