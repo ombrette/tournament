@@ -5,11 +5,11 @@
 			<div class="item">
 				<h2>{{tournament.name}}</h2>
 				<p>{{tournament.game}}</p>
-				<p>{{tournament.status}} - {{tournament.begin_date}}</p>
+				<p>{{tournament.state}} - {{date}}</p>
 			</div>
 
 			<div class="item item-body">
-				{{tournament.desc}}
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo, nibh ac feugiat sagittis, metus diam tristique nibh, ac vehicula arcu mi vitae odio. Sed malesuada gravida augue, sed lobortis ligula scelerisque non. Phasellus tincidunt sit amet sapien sit amet sollicitudin. Suspendisse ultrices lacus quam, a scelerisque mi malesuada feugiat.
 			</div>
 		</div>
 	</div>
@@ -18,7 +18,7 @@
 		    Joueurs inscrits à ce tournoi
 		</div>
 		<div class="item item-button-right" ng-repeat="player in players">
-		    {{player.pseudo}}
+		    {{player.nickname}}
 		</div>
 	</div>
   </ion-content>
