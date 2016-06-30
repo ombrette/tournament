@@ -1,9 +1,13 @@
 <ion-view view-title="Home">
-  <ion-content>
-    <div class="row padding">
-	    <button class="col button button-outline button-positive ">
-		  Votre adversaire est prêt ! Jouez maintenant !
-		</button>
+  <ion-content ng-hide="access_token">
+
+	</ion-content>
+  <ion-content ng-show="access_token">
+    <div class="row padding notif" ng-show="notification">
+		<a class="notification col button button-positive" ng-click="notification.view()" ng-show="notification.unread">
+	      {{notification.data.message}} {{notification.data.tournament.name}}
+	    </a>
+
 	</div>
 	<div class="row padding">
 	    <div class="list card col">

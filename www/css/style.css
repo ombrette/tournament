@@ -1,1 +1,89 @@
-/* Empty. Add your own CSS if you like */
+ion-content{
+	background-color: antiquewhite;
+}
+
+.modal .bar, .menu .scroll, .menu .item-content, .menu .item, .bar.bar-stable, [nav-bar-transition="android"] [nav-bar="active"] .bar, [nav-bar-transition="android"] [nav-bar="entering"] .bar{
+	background: indianred;
+}
+
+.modal .bar, .menu .item-content, .menu .item, .bar.bar-stable .title, .bar-stable .button.button-clear{
+	color: #fff;
+}
+
+.notif a{
+	line-height: 20px;
+	background-color: cornflowerblue;
+}
+
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+.slider-slides {
+    width: 100%;
+}
+
+.tree{
+	position: relative; 
+	min-height: 300px;
+	clear: both;
+}
+.round{
+	display: inline-block; 
+	width: 320px;
+	text-align: center;
+	float: left;
+}
+
+.round li{
+	height: 130px;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.round li div{
+	height: 20px;
+	line-height: 13px;
+}
+
+.round li p{
+	height: 50px;
+	line-height: 50px;
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 0px;
+	font-size: 18px;
+}
+
+.round li p:last-child{
+	border-top: 1px solid #ccc;
+}
+
+.round li p.loser{
+	border-color: #e42112;
+    background-color: #ef473a;
+    color: #fff;
+}
+
+.round li p.winner{
+	border-color: #28a54c;
+    background-color: #33cd5f;
+    color: #fff;
+}
+
+.next{
+	float: right;
+}
+
+.list .item span{
+	float: right;
+}

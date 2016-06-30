@@ -13,12 +13,38 @@
 			</div>
 		</div>
 	</div>
+	<button class="button button-positive button-clear no-animation"
+          ng-click="previous()" ng-show="slideIndex > 0">
+    Previous
+  </button>
+	<button class="button button-positive button-clear no-animation next"
+                  ng-click="next()" ng-show="slideIndex != 2">
+    Next
+  </button>
+	<div class="tree">
+		<ion-slide-box on-slide-changed="slideChanged($index)">
+			<ion-slide ng-repeat="(key, round) in battles_by_round">
+				<div class="round" id="round{{key}}">
+					<h3>Round {{key}}</h3>
+					<ul>
+						<li ng-repeat="battle in round" class="card">
+							<div class="item item-divider">
+							    Match {{battle.number}}
+							  </div>
+							<p ng-class="{loser: battle.winner.nickname, winner: battle.winner.nickname && battle.winner.nickname == battle.player_one.nickname}">{{battle.player_one.nickname}}</p>
+							<p ng-class="{loser: battle.winner.nickname, winner: battle.winner.nickname && battle.winner.nickname == battle.player_two.nickname}">{{battle.player_two.nickname}}</p>
+						</li>
+					</ul>
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+	</div>
 	<div class="list col">
     	<div class="item item-divider">
 		    Joueurs inscrits à ce tournoi
 		</div>
-		<div class="item item-button-right" ng-repeat="player in players">
-		    {{player.nickname}}
+		<div class="item" ng-repeat="player in players">
+		    {{player.nickname}} <span>Niveau : {{player.level.level}} </span>
 		</div>
 	</div>
   </ion-content>

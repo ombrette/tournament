@@ -21,11 +21,14 @@
         <ion-item menu-close href="#" ui-sref="app.home">
           Accueil
         </ion-item>
-        <ion-item menu-close ng-click="login()">
-          Login
+        <ion-item menu-close ng-click="login()" ng-hide="access_token">
+          Connexion
         </ion-item>
         <ion-item menu-close href="#" ui-sref="app.profile">
-          MonProfil
+          Mon profil
+        </ion-item>
+        <ion-item menu-close ng-click="logout()" ng-show="access_token">
+          Déconnexion
         </ion-item>
       </ion-list>
     </ion-content>
