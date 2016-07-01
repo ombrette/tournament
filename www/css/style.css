@@ -6,7 +6,7 @@ ion-content{
 	background: indianred;
 }
 
-.modal .bar, .menu .item-content, .menu .item, .bar.bar-stable .title, .bar-stable .button.button-clear{
+.modal .title, .menu .item-content, .menu .item, .bar.bar-stable .title, .bar-stable .button.button-clear{
 	color: #fff;
 }
 

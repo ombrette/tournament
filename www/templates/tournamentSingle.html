@@ -30,9 +30,9 @@
 						<li ng-repeat="battle in round" class="card">
 							<div class="item item-divider">
 							    Match {{battle.number}}
-							  </div>
-							<p ng-class="{loser: battle.winner.nickname, winner: battle.winner.nickname && battle.winner.nickname == battle.player_one.nickname}">{{battle.player_one.nickname}}</p>
-							<p ng-class="{loser: battle.winner.nickname, winner: battle.winner.nickname && battle.winner.nickname == battle.player_two.nickname}">{{battle.player_two.nickname}}</p>
+							</div>
+							<p ng-class="{loser: battle.winner.nickname, winner: battle.winner.nickname && battle.winner.nickname == battle.player_one.nickname}">{{battle.player_one.nickname}}<button ng-show="battle.player_one.nickname == user.nickname && !battle.ready.player_one" ng-click="ready(battle.id)">Prêt?<span class="ion-play"></span></button></p>
+							<p ng-class="{loser: battle.winner.nickname, winner: battle.winner.nickname && battle.winner.nickname == battle.player_two.nickname}">{{battle.player_two.nickname}}<button ng-show="battle.player_two.nickname == user.nickname && !battle.ready.player_two" ng-click="ready(battle.id)">Prêt?<span class="ion-play"></span></button></p>
 						</li>
 					</ul>
 				</div>

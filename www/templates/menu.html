@@ -18,13 +18,13 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#" ui-sref="app.home">
+        <ion-item menu-close href="#" ui-sref="app.home" ng-show="access_token">
           Accueil
         </ion-item>
         <ion-item menu-close ng-click="login()" ng-hide="access_token">
           Connexion
         </ion-item>
-        <ion-item menu-close href="#" ui-sref="app.profile">
+        <ion-item menu-close href="#" ui-sref="app.profile" ng-show="access_token">
           Mon profil
         </ion-item>
         <ion-item menu-close ng-click="logout()" ng-show="access_token">

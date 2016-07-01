@@ -80,11 +80,13 @@ app.config(function (localStorageServiceProvider) {
     .setPrefix('tournamentmanager');
 });
 
-app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'localStorageService', '$http', '$state', function($scope, $rootScope, $ionicModal, $timeout, localStorageService, $http, $state) {
+app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'localStorageService', '$http', '$state', '$location', function($scope, $rootScope, $ionicModal, $timeout, localStorageService, $http, $state, $location) {
 
   $scope.loginData = {};
 
   $rootScope.apiAddress = apiAddress;
+
+  var imgBasePath = "http://"+$location.host()+":"+$location.port()+"/image";
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -96,6 +98,9 @@ app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'lo
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
     $scope.modal.hide();
+    setTimeout(function(){
+      location.reload();
+    },500);
   };
 
   // Open the login modal
@@ -131,9 +136,14 @@ app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'lo
     delete $rootScope.access_token;
     delete $rootScope.me;
     setTimeout(function(){
-      location.reload();
+      $scope.login();
+      // location.reload();
     },500);
   }
+
+  $scope.$on('modal.hidden', function() {
+    $state.reload();
+  });
 
   // if(!localStorageService.get("access_token")){
   //   $scope.login();
@@ -154,6 +164,7 @@ app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'lo
          var debut = new Date().getFullYear();
          var birth_date = new Date($scope.user.birth_date).getFullYear();
          $scope.age = debut - birth_date;
+         console.log($scope.user);
          
       }, function myError(response) {
          console.log(response);
@@ -177,11 +188,9 @@ app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'lo
         if(r.data.length > 0){
           $scope.notification.data = r.data[0];
           $scope.notification.unread = true;
-          notif_id = $scope.notification.data.tournament.id;
-          console.log(r);
-          console.log($scope.notification);
-          console.log(notif_id);
+          $scope.notif_id = $scope.notification.data.tournament.id;
         }
+        console.log($scope.notification);
       }, function errorCallback(r) {
           console.log("Unable to check for notification");
       });
@@ -198,7 +207,7 @@ app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'lo
            }
       }).then(function successCallback(r) {
         console.log("Notification set as read");
-        $state.go('app.singleTournament',{id : notif_id});
+        $state.go('app.singleTournament',{tournamentId : $scope.notif_id});
       }, function errorCallback(r) {
           console.log("Unable to set notification as read");
       });
@@ -213,4 +222,9 @@ app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'lo
       },15000);
     });
   }
+
+  $rootScope.getImagePath = function(imgName){
+      return imgBasePath+"/"+imgName;
+    }
+
 }]);

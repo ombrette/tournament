@@ -68,6 +68,22 @@ app.controller('TournamentCtrl', ['$scope', '$rootScope', '$http', '$stateParams
      console.log(response);
   });
 
+  $scope.ready = function(idBattle) {
+    $http({
+        method : "POST",
+        url : $rootScope.apiAddress+"battle/"+idBattle+"/ready",
+        headers: {
+             'Authorization':  "Bearer "+ $rootScope.access_token
+           }
+    })
+    .then(function mySucces(response) {
+       location.reload();
+    }, function myError(response) {
+       console.log("Error while try to set ready");
+       console.log(response);
+    });
+  };
+
   // var block_height = $(".round_block").height();
   // $(".round_block").css("line-height", block_height+"px");
 

@@ -4,8 +4,10 @@
 	</ion-content>
   <ion-content ng-show="access_token">
     <div class="row padding notif" ng-show="notification">
-		<a class="notification col button button-positive" ng-click="notification.view()" ng-show="notification.unread">
-	      {{notification.data.message}} {{notification.data.tournament.name}}
+		<a class="notification col button button-positive" ng-click="notification.view(notification.data.id)" ng-show="notification.unread">
+	      {{notification.data.message}} <span ng-show="notification.data.type == 1">{{notification.data.tournament.name}}</span>
+	      <span ng-show="notification.data.type == 2 && notification.data.battle.player_one.nickname == user.nickname">{{notification.data.battle.player_two}}</span>
+	      <span ng-show="notification.data.type == 2 && notification.data.battle.player_two.nickname == user.nickname">{{notification.data.battle.player_one}}</span>
 	    </a>
 
 	</div>
