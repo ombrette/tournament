@@ -1,9 +1,9 @@
 ion-content{
-	background-color: antiquewhite;
+	background-color: #eee;
 }
 
 .modal .bar, .menu .scroll, .menu .item-content, .menu .item, .bar.bar-stable, [nav-bar-transition="android"] [nav-bar="active"] .bar, [nav-bar-transition="android"] [nav-bar="entering"] .bar{
-	background: indianred;
+	background: #3498db;
 }
 
 .modal .title, .menu .item-content, .menu .item, .bar.bar-stable .title, .bar-stable .button.button-clear{
