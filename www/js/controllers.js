@@ -59,11 +59,6 @@ app.controller('TournamentCtrl', ['$scope', '$rootScope', '$http', '$stateParams
     console.log(battles_by_round);
     round_nb = $scope.round_nb;
 
-    var window_width = $(window).width();
-    //$(".slider-slides").css("width", $scope.round_nb * window_width);
-    //$(".slider-slides ion-slide").css("width", window_width);
-    //$("ion-scroll").css("width", window_width);
-
   }, function myError(response) {
      console.log(response);
   });

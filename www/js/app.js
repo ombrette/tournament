@@ -6,6 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 //var apiAddress = "http://192.168.1.41/tournamentmanager/web/app_dev.php/";
 var apiAddress = "http://164.132.110.56/app_dev.php/";
+var ip = "http://164.132.110.56/";
 
 var app = angular.module('starter', ['ionic', 'LocalStorageModule']);
 
@@ -85,6 +86,7 @@ app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'lo
   $scope.loginData = {};
 
   $rootScope.apiAddress = apiAddress;
+  $rootScope.ip = ip;
 
   var imgBasePath = "http://"+$location.host()+":"+$location.port()+"/image";
 
@@ -224,7 +226,7 @@ app.controller('AppCtrl', ['$scope', '$rootScope','$ionicModal', '$timeout', 'lo
   }
 
   $rootScope.getImagePath = function(imgName){
-      return imgBasePath+"/"+imgName;
+      return $rootScope.ip+"accounts/images/"+imgName;
     }
 
 }]);
